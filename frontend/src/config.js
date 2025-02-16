@@ -1,2 +1,2 @@
 // constants.js
-export const BACKEND_URL = "https://api.example.com";
+export const BACKEND_URL = "https://phish-sheild.onrender.com";
