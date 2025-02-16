@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
+import { BACKEND_URL } from "./config";
 
 export const EmailSpam = () => {
   const [emailContent, setEmailContent] = useState("");
@@ -16,7 +17,7 @@ export const EmailSpam = () => {
     setError("");
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:5000/api/check-spam", { emailContent });
+      const response = await axios.post(`${BACKEND_URL}/api/check-spam`, { emailContent });
       setResult(response.data);
     } catch (error) {
       setResult({ error: "❌ Failed to check the email. Try again later." });

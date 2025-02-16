@@ -5,6 +5,7 @@ import { Button } from "./components/ui/button";
 import { Input } from "./components/ui/input";
 import { Card } from "./components/ui/card";
 import axios from "axios";
+import { BACKEND_URL } from "./config.js";
 
 export const URLChecker = () => {
   const [url, setUrl] = useState("");
@@ -42,7 +43,7 @@ export const URLChecker = () => {
 
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:5000/api/check-url", { url });
+      const response = await axios.post(`${BACKEND_URL}/api/check-url", { url }`);
       setResult(response.data);
       toast({
         title: response.data.isPhishing ? "Warning: Potential Threat Detected" : "URL Verified Safe",
