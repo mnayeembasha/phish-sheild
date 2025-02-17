@@ -18,7 +18,7 @@ export const EmailSpam = () => {
     setLoading(true);
     try {
       const response = await axios.post(`${BACKEND_URL}/api/check-spam`, { emailContent });
-      setResult(response.data);
+      setResult(response.data.result);
     } catch (error) {
       setResult({ error: "❌ Failed to check the email. Try again later." });
       console.log(error);

@@ -4,9 +4,9 @@ import { URLChecker } from "./URLChecker";
 export default function URLInspector() {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1.2 }}
+      // initial={{ opacity: 0 }}
+      // animate={{ opacity: 1 }}
+      // transition={{ duration: 1.2 }}
       className="min-h-screen flex flex-col items-center justify-center px-4 relative overflow-hidden bg-gray-900/20 text-gray-200"
     >
       {/* Gradient background with animation */}
@@ -19,7 +19,7 @@ export default function URLInspector() {
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
+        transition={{ duration: 1, ease: "easeOut" }}
         className="relative z-10 py-14 px-6 md:py-14 md:px-14 rounded-2xl bg-gray-800/30 shadow-xl"
       >
         <motion.div

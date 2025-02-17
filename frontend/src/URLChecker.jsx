@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Shield, AlertCircle, Check, Loader2 } from "lucide-react";
+import { Shield, AlertCircle, Check, Loader2, ShieldCheck, Globe, AlertTriangle, XCircle } from "lucide-react";
 import { useToast } from "../src/hooks/use-toast.js";
 import { Button } from "./components/ui/button";
 import { Input } from "./components/ui/input";
@@ -127,8 +127,41 @@ export const URLChecker = () => {
                 ? result.error
                 : result.isPhishing
                 ? "Warning: Potential phishing URL detected!"
-                : "URL verified as safe"}
+                : "URL verified as safe"
+              }
+
             </div>
+
+             {/* Additional Information */}
+  {!result.error && <div className="flex flex-col gap-y-3 mt-3">
+    {/* SSL Status */}
+    <div className="flex items-center gap-2 p-3 border rounded-lg bg-gray-800/20">
+      <ShieldCheck className="h-5 w-5 text-blue-500" />
+      <span className="text-sm font-medium text-gray-200">
+        SSL : <span className="text-gray-500">{result.sslStatus}</span>
+      </span>
+    </div>
+
+    {/* Safe Browsing Check */}
+      <div className="flex items-center gap-2 p-3 border rounded-lg bg-gray-800/20">
+        <Globe className="h-5 w-5 text-purple-500" />
+        <span className="text-sm font-medium text-gray-200">
+          Safe Browsing :  <span className="text-gray-500">  {result.safeBrowsing}</span>
+        </span>
+      </div>
+
+    {/* Final Verdict */}
+    <div
+      className={`flex items-center gap-2 p-3 border rounded-lg ${
+        result.isPhishing ? "bg-red-200 text-red-700" : "bg-green-200 text-green-700"
+      }`}
+    >
+      {result.isPhishing ? <AlertTriangle className="h-5 w-5" /> : <Check className="h-5 w-5" />}
+      <span className="text-sm font-medium">
+        Final Verdict : {result.isPhishing ? <span className="">Phishing Detected</span> : "✅ Safe"}
+      </span>
+    </div>
+  </div>}
           </div>
         )}
       </div>

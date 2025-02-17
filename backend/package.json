@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm install",
+    "dev": "nodemon server.js",
     "start": "node server.js"
   },
   "keywords": [],
@@ -15,6 +16,10 @@
     "axios": "^1.7.9",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "puppeteer": "^24.2.1",
+    "ssl-checker": "^2.0.10",
+    "whois-json": "^2.0.4",
+    "whoiser": "^1.18.0"
   }
 }
