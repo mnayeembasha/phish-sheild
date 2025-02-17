@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Shield, AlertCircle, Check, Loader2, ShieldCheck, Globe, AlertTriangle, XCircle } from "lucide-react";
+import { Shield, AlertCircle, Check, Loader2, ShieldCheck, Globe, AlertTriangle } from "lucide-react";
 import { useToast } from "../src/hooks/use-toast.js";
 import { Button } from "./components/ui/button";
 import { Input } from "./components/ui/input";
