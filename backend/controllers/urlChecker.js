@@ -92,7 +92,7 @@ function determineFinalVerdict(
 
   if (
     // (domainNotFound || domainAge.startsWith("✅")) &&
-    safeBrowsing === "✅ Not Blacklisted by Gooogle" &&
+    safeBrowsing === "✅ Not Blacklisted by Google" &&
     sslStatus === "✅ SSL Valid" &&
     (websiteStructure !== "Website Analysis Failed" ? websiteStructure === "✅ Website Structure Looks Safe":true)
     // websiteStructure === "✅ Website Structure Looks Safe"
