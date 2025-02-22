@@ -20,7 +20,7 @@ async function checkSafeBrowsing(url) {
                 },
             }
         );
-        return response.data.matches ? "Blacklisted by Google" : "✅ Not Blacklisted by Gooogle";
+        return response.data.matches ? "Blacklisted by Google" : "✅ Not Blacklisted by Google";
     } catch (error) {
         return "❌ Error Checking Safe Browsing";
     }
